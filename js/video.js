@@ -9,8 +9,8 @@ document.querySelector("#play").addEventListener("click", function () {
 	console.log("Play Video");
 	video.play();
 	let volume = video.volume * 100;
-	document.querySelector("#volume").textContent = volume;
-	console.log("Volume: " + volume);
+	document.querySelector("#volume").textContent = volume + "%";
+	console.log("Volume: " + volume + "%");
 });
 
 document.querySelector("#pause").addEventListener("click", function () {
@@ -22,7 +22,7 @@ document.querySelector("#pause").addEventListener("click", function () {
 document.querySelector("#slower").addEventListener("click", function () {
 	if (video.playbackRate > 0.1) {
 		video.playbackRate -= 0.1;
-		console.log("new speed: " + video.playbackRate);
+		console.log("new speed: " + video.playbackRate.toFixed(2));
 	} else {
 		console.log("Video achieves its slowest speed");
 	}
